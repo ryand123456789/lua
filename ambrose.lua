@@ -11,3 +11,14 @@ home = gg.choice({
     "Option 5 winner"
     "Exit"},nil,"Choose Option"
 })
+
+if home == 1
+then 
+    choice1 = gg.choice({"Egg Sandwich","Ham Sandwich"})
+end
+if choice1 == 1
+then
+    gg.alert("Nice try", "Okay")
+end
+if choice1 == 2
+    choice1_2 == gg.choice({"Eggggg","MeggaEgg"})
