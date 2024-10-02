@@ -1,24 +1,20 @@
-gg.alert("Hello beta","Contunie") --essentially the introduction
-gg.toast("I am him btw")
+gg.alert("Tom P ModMenu","Continue") --essentially the introduction
 
 if gg.isVisible(true) then gg.setVisibility(false) end 
 
-home = gg.choice({
-    "Option 1 Tom"
-    "Option 2 Scal"
-    "Option 3 Ambrose"
-    "Option 4 egg"
-    "Option 5 winner"
-    "Exit"},nil,"Choose Option"
-})
-
-if home == 1
+HOME = gg.choice({
+    "Coins Generate",
+    "Gems Generate"}, nil, "Hello Mr P.")
+if HOME == 1
 then 
-    choice1 = gg.choice({"Egg Sandwich","Ham Sandwich"})
+    prompt = gg.prompt({"Type the amount of coins you have currently:"},nil,{[1]='number'})
+    gg.searchNumber(prompt[1],gg.TYPE_DWORD)
+    gg.getResults(100)
+    gg.editAll('2000000000',gg.TYPE_DWORD)
+    gg.clearResults(100)
 end
-if choice1 == 1
-then
-    gg.alert("Nice try", "Okay")
-end
-if choice1 == 2
-    choice1_2 == gg.choice({"Eggggg","MeggaEgg"})
+    --search for DWORD value (space in mem)
+
+
+
+    
