@@ -12,6 +12,9 @@ HOME = gg.choice({
     "Infinite Ammo ",--HOME==4
     "Narrow Down Results",--HOME==5
     "Infinite Ammo Finalize"--HOME==6
+    "Edit Skill Points" --HOME==7
+    "Edit Skill Points" --HOME==7
+    "Edit Skill Points" --HOME==7
 },
      nil, "Hello Mr P. Select what option you want")
 if HOME == 1
@@ -64,9 +67,14 @@ then
     gg.alert("Done!" ,"OK")
 end
 if HOME == 6
-{
+then
     gg.editAll(999999)
     gg.alert("Done!" ,"OK")
-}
-
+end
+if HOME == 7
+then
+    prompt = gg.prompt({"To change your Skill Points Value, Enter the number of skill points you have currently. You will need to earn another skill point, then refine the search using Narrow Down Results since Skill points is such a broad value. Finally, finalize the change once you've narrowed it down"},nil,{[1]='number'})
+    gg.searchNumber(prompt[1],gg.TYPE_DWORD,true)
+    gg.alert("Search begun!" ,"OK")
+end
     
