@@ -13,8 +13,8 @@ HOME = gg.choice({
     "Narrow Down Results",--HOME==5
     "Infinite Ammo Finalize"--HOME==6
     "Edit Skill Points" --HOME==7
-    "Edit Skill Points" --HOME==7
-    "Edit Skill Points" --HOME==7
+    "Finalize" --HOME==8
+    "Cheat Score Points" --HOME==9
 },
      nil, "Hello Mr P. Select what option you want")
 if HOME == 1
@@ -22,7 +22,7 @@ then
     prompt = gg.prompt({"Type the amount of coins you have currently: (WARNING: if your coin value is low the game may break or not change your coin value)"},nil,{[1]='number'})
     gg.searchNumber(prompt[1],gg.TYPE_DWORD,true)
     gg.getResults(100)
-    prompt = gg.prompt({"Type the amount of coins want:"},nil,{[2]='number'})
+    prompt = gg.prompt({"Type the amount of coins want:"},nil,{[1]='number'})
     prompt = "EDIT DECRYPTOR VALUE"
     gg.editAll(prompt[1],gg.TYPE_DWORD)
     gg.clearResults(100)
@@ -33,7 +33,7 @@ then
     prompt = gg.prompt({"Type the amount of gems you have currently: (WARNING: if your gem value is low the game may break or not change your gem value)"},nil,{[1]='number'})
     gg.searchNumber(prompt[1],gg.TYPE_DWORD,true)
     gg.getResults(100)
-    prompt = gg.prompt({"Type the amount of gems you want:"},nil,{[2]='number'})
+    prompt = gg.prompt({"Type the amount of gems you want:"},nil,{[1]='number'})
     prompt = "EDIT DECRYPTOR VALUE"
     gg.editAll(prompt[1],gg.TYPE_DWORD)
     gg.clearResults(100)
@@ -77,4 +77,20 @@ then
     gg.searchNumber(prompt[1],gg.TYPE_DWORD,true)
     gg.alert("Search begun!" ,"OK")
 end
-    
+if HOME == 8
+then
+    prompt = gg.prompt({"Finalize your results, enter the number you want to change your results to"},nil,{[1]='number'})
+    gg.editAll(9999)
+    gg.alert("Done!" ,"OK")
+end
+if HOME == 9
+then
+    prompt = gg.prompt({"Type the score you have currently: (WARNING: if your score is low the game may break or not change your score value)"},nil,{[1]='number'})
+    gg.searchNumber(prompt[1],gg.TYPE_DWORD,true)
+    gg.getResults(100)
+    prompt = gg.prompt({"Type the amount of score you want:"},nil,{[2]='number'})
+    prompt = "EDIT DECRYPTOR VALUE"
+    gg.editAll(prompt[1],gg.TYPE_DWORD)
+    gg.clearResults(100)
+    gg.alert("Done!","OK")
+end
